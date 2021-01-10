@@ -15,10 +15,11 @@ def registration_view(request):
 	if request.POST:
 		form = RegistrationForm(request.POST)
 		if form.is_valid():
-			user = form.save()
+			form.save()
 			email = form.cleaned_data.get('email')
 			raw_password = form.cleaned_data.get('password1')
-			login(request, user)
+			account = authenticate(email=email, password=raw_password)
+			login(request, account)
 			Customer.objects.create(
                     user=account,
                     email=request.user.email,
