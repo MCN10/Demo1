@@ -75,18 +75,18 @@
                     <h3>Cart Totals</h3>
                     <hr>
 
-                    <p class="d-flex">
+                    <p >
                         <span>Items: &nbsp;</span>
                         <span><strong>{{order.get_cart_items}}</strong></span>
                     </p>
-                    <p class="d-flex total-price">
+                    <p>
                         <span>Total:&nbsp; </span>
                         <span><strong> R{{order.get_cart_total|floatformat:2}} </strong></span>
                     </p>
                     <hr>
 
                 </div>
-                <p><a href="{% url 'Axis:store' %}" class="btn action--button-btn">Continue Shopping&nbsp;&nbsp;</a>&nbsp;{% if order.get_cart_total%}<a href="{% url 'Axis:checkout' %}" class="btn action--button-btn">Proceed to Checkout &nbsp;&nbsp; </a>
+                <p><a href="{% url 'Axis:store' %}" class="btn action--button-btn">Continue Shopping&nbsp;&nbsp;</a>&nbsp;{% if order.get_cart_total%}<a href="{% url 'Axis:checkout' %}" class="btn action--button-btn" style="backgrond-color: blue">Proceed to Checkout &nbsp;&nbsp; </a>
                     {% endif %}</p>
             </div>
         </div>

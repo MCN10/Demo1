@@ -14,7 +14,7 @@
         <p class="billing-heading mb-4 action--text">Number of Items : <strong>{{ order.get_cart_items}}</strong></p>
         <p class="billing-heading mb-4 action--text">Grand Total : <strong>R{{ order.get_cart_total|floatformat:2}}</strong></p>
         <span> {% for item in items %} <a href="{% url 'Axis:product_details' item.product.id %}"><img src={{item.product.imageURL1}} class="slider" style="width:100px; height:120px" /></a> X {{item.quantity}}&nbsp;{% endfor %}</span>
-        <div style="padding-left:30%; padding-right:30%; " id="form-wrapper">
+        <div style="padding:auto; " id="form-wrapper">
             <form id="form" >
                 <div id="user-informaton">
                     <hr>
