@@ -1798,7 +1798,7 @@ hr {
 
 @media screen and (max-width: 59.688em) {
     .grid {
-        padding: 2em 0.5em;
+        padding: auto;
         font-size: 65%;
     }
 

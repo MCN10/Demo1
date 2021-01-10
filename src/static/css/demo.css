@@ -998,13 +998,12 @@ textarea.input100 {
     position: fixed;
     top: 0;
     right: 0;
-
     height: 100%;
     padding: 0 1.195em;
     cursor: pointer;
-    color: #fff;
+    color: #000;
     border: none;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 
@@ -1372,9 +1371,9 @@ hr {
 
 .action__text {
     letter-spacing: 1px;
-    font-size: 1.2em;
+    font-size: 1em;
     vertical-align: middle;
-    display: inline-block;
+    display: flex;
     color: #000;
 }
 
@@ -1798,12 +1797,12 @@ hr {
 
 @media screen and (max-width: 59.688em) {
     .grid {
-        padding: 2em 0.5em;
+        padding: auto;
         font-size: 65%;
     }
 
     .product {
-        margin: 0 0.5em 1em;
+        margin: auto;
         min-width: 10em;
     }
 

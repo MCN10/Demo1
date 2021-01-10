@@ -27,7 +27,7 @@
 }
 
 .contend {
-	padding: 4em;
+	padding: 1em;
 	min-height: 0vh;
 	display: flex;
 	position: relative;
@@ -73,7 +73,7 @@
 
 .content__text {
 	font-size: 1rem;
-	
+
 }
 
 .content__text--right {

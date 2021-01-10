@@ -117,13 +117,13 @@ def contact(request):
             name = request.user.username
             email = request.user.email
             message = name + "\n" + email + "\n"+ message
-            send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['django10.foxx@gmail.com', 'mcn10.foxx@gmail.com'], fail_silently="false" )
+            send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['christopher@3rdaxis.co.za', 'mcn10.foxx@gmail.com'], fail_silently="false" )
             messages.success(request, ("Your message has been sent successfully..."))
         else:
             name = request.POST['name']
             email = request.POST['email']
             message = name + "\n" + email + "\n"+ message
-            send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['django10.foxx@gmail.com', 'mcn10.foxx@gmail.com'], fail_silently="false" )
+            send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['christopher@3rdaxis.co.za', 'mcn10.foxx@gmail.com'], fail_silently="false" )
             messages.success(request, ("Your message has been sent successfully..."))
         return redirect('Axis:store')
 

@@ -19,7 +19,7 @@
   {% if user.is_authenticated %}
 <a href="{% url 'Axis:cart' %}" class="">
     <button class="cart">
-        <ion-icon src="{% static 'ion-icon/cart-outline.svg" size="large" class="cart__icon"></ion-icon>
+        <ion-icon src="{% static 'ion-icons/cart-outline.svg" size="large" class="cart__icon"></ion-icon>
         <span class="text-hidden">Shopping cart</span>
         <span class="cart__count">{{cartItems}}</span>
     </button>
@@ -27,7 +27,7 @@
 {% else %}
 <a href="{% url 'account:login' %}">
     <button class="cart">
-        <ion-icon src="{% static 'ion-icon/cart-outline.svg" size="large" class="cart__icon"></ion-icon>
+        <ion-icon src="{% static 'ion-icons/cart-outline.svg" size="large" class="cart__icon"></ion-icon>
         <span class="text-hidden">Shopping cart</span>
         <span class="cart__count">{{cartItems}}</span>
     </button></a>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="contend content--numbered">
+			<section class="contend">
         <table role="table" style="border-color: transparent;">
           <tr role="row">
             <td role="cell">	<p class="content__text" data-scroll="" data-scroll-speed="2">{{ product.description1 }} </p></td>
@@ -125,6 +125,6 @@
 
 			<section class="content">
 			</section>
-    
 
-{% endblock %}  
+
+{% endblock %}
