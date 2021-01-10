@@ -922,7 +922,7 @@ textarea.input100 {
     color: #000;
     text-align: center;
     background-image: url("../images/bg1.jpg");
-    background-size: cover;
+    background-size: contain;
     overflow: scroll;
     -webkit-transform: translate3d(0, 0, 0);
     /* Fix for Chrome flicker on Mac ...party like we're in 2012! */
