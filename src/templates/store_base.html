@@ -162,20 +162,22 @@
             <a href="{% url 'Axis:dashboard' %}" target="_blank" title="Management Studio">
                 <ion-icon src="{% static 'ion-icons/options-outline.svg' %}" size="large"></ion-icon>Studio
             </a>
+                        {% endif %}
             <a type="radio" onclick="lightMode()">
                 <ion-icon size="small" title="Light Mode" name="sunny-outline"></ion-icon><br>Light
             </a>
 
             <br>
             <br>
+                        {% if user.is_authenticated %}
             <p style="text-align: center; padding-left: 5%; top:0;">Logged in as: {{user.username}}
                 <!-- DARK MODE LIGHT MODE SWITCHES -->
 
                 <!-- END DARK MODE LIGHT MODE SWITCHES -->
 
             </p>
-
             {% endif %}
+
             <hr>
 
         </nav>

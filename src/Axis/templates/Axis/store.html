@@ -20,7 +20,8 @@
 
         {% for category in category_list %}
         <button class="action filter__item" data-filter=".{{category.slug}}">
-            <span class="action__text"> {{category}}</span>
+<i class="icon"><ion-icon size="large" name="apps-sharp"></ion-icon></i>
+                <span class="action__text"> {{category}}</span>
         </button>
 
         {% endfor %}
