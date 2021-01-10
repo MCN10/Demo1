@@ -95,83 +95,90 @@
       <!-- Blueprint header -->
 
       <header class="bp-header ">
+
           <br>
 
           <span>
 
               <div class="main">
-                          <a ><img id="axis_spinner" src="{% static 'images/III-light.gif' %}" style="width: 5%" /></a>
-                          <sup>rd</sup>Axis<br><br>
+                  <a><img id="axis_spinner" src="{% static 'images/III-light.gif' %}" style="width: 10%" /></a>
+                  rdAxis<br><br>
               </div>
           </span>
-          {% if user.is_authenticated %}
+  <hr>        <br>
 
-          {% endif %}
           <nav>
-            <input class="check-hidden" type="checkbox" />
-            <a type="radio" onclick="darkMode()"><ion-icon size="small" title="Dark Mode" name="contrast-outline" ></ion-icon><br>Dark</a>
+              <input class="check-hidden" type="checkbox" />
+              <a type="radio" onclick="darkMode()">
+                  <ion-icon size="small" title="Dark Mode" name="contrast-outline"></ion-icon><br>Dark
+              </a>
 
-              <a  target="_blank" title="Back">
-                <ion-icon src="{% static 'ion-icons/home-outline.svg' %}"size="large" ></ion-icon><br>Home
+              <a href="{% url 'Axis:home' %}" title="Home">
+                  <ion-icon src="{% static 'ion-icons/home-outline.svg' %}" size="large"></ion-icon><br>Home
               </a>
               <a href="{% url 'Axis:store' %}" title="Online Store">
-                  <ion-icon src="{% static 'ion-icons/storefront-outline.svg' %}"size="large" ></ion-icon>
-  Store
+                  <ion-icon src="{% static 'ion-icons/storefront-outline.svg' %}" size="large"></ion-icon>
+                  Store
               </a>
               {% if user.is_authenticated %}
               {% if cartItems %}
 
               <a href="{% url 'Axis:cart' %}" title="Cart" data-info="">
-                  <ion-icon src="{% static 'ion-icons/cart-sharp.svg' %}" class="cart__icon" size="large" ></ion-icon><br>Cart
+                  <ion-icon src="{% static 'ion-icons/cart-sharp.svg' %}" class="cart__icon" size="large"></ion-icon><br>Cart
                   <span class="cart__count">{{cartItems}}</span>
               </a>
 
               {% else %}
 
               <a href="{% url 'Axis:cart' %}" title="Cart" data-info="">
-                             <ion-icon src="{% static 'ion-icons/cart-outline.svg' %}"size="large" ></ion-icon><br>Cart
-                         </a>
+                  <ion-icon src="{% static 'ion-icons/cart-outline.svg' %}" size="large"></ion-icon><br>Cart
+              </a>
               {% endif %}
               <a href="{% url 'account:profile' %}" title="My  Profile">
-                <ion-icon src="{% static 'ion-icons/person-outline.svg' %}"size="large" ></ion-icon>Profile           </a>
+                  <ion-icon src="{% static 'ion-icons/person-outline.svg' %}" size="large"></ion-icon>Profile
+              </a>
               <a href="{% url 'account:logout' %}" title="Log Out">
-  <ion-icon src="{% static 'ion-icons/log-out-outline.svg' %}"size="large" ></ion-icon>Logout            </a>
+                  <ion-icon src="{% static 'ion-icons/log-out-outline.svg' %}" size="large"></ion-icon>Logout
+              </a>
               {% else %}
 
 
               <a href="{% url 'account:login' %}" title="Cart" data-info="">
-                             <ion-icon src="{% static 'ion-icons/cart-outline.svg' %}"size="large" ></ion-icon><br>Cart
-                         </a>
+                  <ion-icon src="{% static 'ion-icons/cart-outline.svg' %}" size="large"></ion-icon><br>Cart
+              </a>
               <a href="{% url 'account:register' %}" title="Create Account">
-                  <ion-icon src="{% static 'ion-icons/person-add-outline.svg' %}" size="large" ></ion-icon>Register
+                  <ion-icon src="{% static 'ion-icons/person-add-outline.svg' %}" size="large"></ion-icon>Register
               </a>
               <a href="{% url 'account:login' %}" title="Log in">
-  <ion-icon src="{% static 'ion-icons/log-in-outline.svg' %}"size="large" ></ion-icon><br>Log in            </a>
+                  <ion-icon src="{% static 'ion-icons/log-in-outline.svg' %}" size="large"></ion-icon><br>Log in
+              </a>
               {% endif %}
               <a href="{% url 'Axis:contact' %}" title="Contact">
-                  <ion-icon src="{% static 'ion-icons/mail-outline.svg' %}"size="large" ></ion-icon>Contact
+                  <ion-icon src="{% static 'ion-icons/mail-outline.svg' %}" size="large"></ion-icon>Contact
               </a>
               <a href="{% url 'Axis:about' %}" title="About Us">
-                  <ion-icon src="{% static 'ion-icons/information-circle-outline.svg' %}"size="large" ></ion-icon>About
+                  <ion-icon src="{% static 'ion-icons/information-circle-outline.svg' %}" size="large"></ion-icon>About
               </a>
               {% if user.is_axisStaff or user.is_superuser %}
               <a href="{% url 'Axis:dashboard' %}" target="_blank" title="Management Studio">
-                  <ion-icon src="{% static 'ion-icons/options-outline.svg' %}"size="large" ></ion-icon>Studio
+                  <ion-icon src="{% static 'ion-icons/options-outline.svg' %}" size="large"></ion-icon>Studio
               </a>
-              <a type="radio" onclick="lightMode()"><ion-icon size="small" title="Light Mode" name="sunny-outline" ></ion-icon><br>Light</a>
+                          {% endif %}
+              <a type="radio" onclick="lightMode()">
+                  <ion-icon size="small" title="Light Mode" name="sunny-outline"></ion-icon><br>Light
+              </a>
 
-              <br>
-              <br>
+                          {% if user.is_authenticated %}
               <p style="text-align: center; padding-left: 5%; top:0;">Logged in as: {{user.username}}
-      <!-- DARK MODE LIGHT MODE SWITCHES -->
+                  <!-- DARK MODE LIGHT MODE SWITCHES -->
 
-                <!-- END DARK MODE LIGHT MODE SWITCHES -->
+                  <!-- END DARK MODE LIGHT MODE SWITCHES -->
 
               </p>
-
               {% endif %}
-              <hr>
 
+              <hr>
+  <br>
           </nav>
       </header>
     <!-- Compare basket

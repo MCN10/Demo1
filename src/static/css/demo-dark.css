@@ -1804,7 +1804,7 @@ hr {
     }
 
     .product {
-        margin: 0 0.5em 1em;
+      margin: auto;
         min-width: 10em;
     }
 

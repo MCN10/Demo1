@@ -86,7 +86,7 @@
                     <hr>
 
                 </div>
-                <p><a href="{% url 'Axis:store' %}" class="btn action--button-btn">Continue Shopping&nbsp;&nbsp;</a>&nbsp;{% if order.get_cart_total%}<a href="{% url 'Axis:checkout' %}" class="btn action--button-btn" style="backgrond-color: blue">Proceed to Checkout &nbsp;&nbsp; </a>
+                <p><a href="{% url 'Axis:store' %}" class="btn action--button-btn">Continue Shopping&nbsp;&nbsp;</a>&nbsp;{% if order.get_cart_total%}<a href="{% url 'Axis:checkout' %}" class="btn action--button-btn" >Proceed to Checkout &nbsp;&nbsp; </a>
                     {% endif %}</p>
             </div>
         </div>

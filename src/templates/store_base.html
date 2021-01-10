@@ -92,6 +92,7 @@
     <!-- Blueprint header -->
 
     <header class="bp-header ">
+
         <br>
 
         <span>
@@ -101,9 +102,8 @@
                 rdAxis<br><br>
             </div>
         </span>
-        {% if user.is_authenticated %}
+<hr>        <br>
 
-        {% endif %}
         <nav>
             <input class="check-hidden" type="checkbox" />
             <a type="radio" onclick="darkMode()">
@@ -165,8 +165,6 @@
                 <ion-icon size="small" title="Light Mode" name="sunny-outline"></ion-icon><br>Light
             </a>
 
-            <br>
-            <br>
                         {% if user.is_authenticated %}
             <p style="text-align: center; padding-left: 5%; top:0;">Logged in as: {{user.username}}
                 <!-- DARK MODE LIGHT MODE SWITCHES -->
@@ -177,7 +175,7 @@
             {% endif %}
 
             <hr>
-
+<br>
         </nav>
     </header>
     {% if messages %}
