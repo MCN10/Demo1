@@ -35,7 +35,7 @@
     {% else %}
     <a href="{% url 'account:login' %}">
         <button class="cart">
-            <ion-icon src="{% static 'ion-icons/cart-outline.svg" size="small" class="cart__icon"></ion-icon>
+            <ion-icon src="{% static 'ion-icons/cart-outline.svg' %}" size="small" class="cart__icon"></ion-icon>
             <span class="text-hidden">Shopping cart</span>
             <span class="cart__count">{{cartItems}}</span>
         </button></a>
@@ -90,7 +90,7 @@
                 <span class=" product__title meta__title">{{product.name}}</span>
                 <a href="{% url 'Axis:product_details'  product.id %}"><img class="product__image extra" src="{{product.imageURL1}}" alt="{{product.name}}" /></a>
                 <span class="product__year ">{{product.description}}</span>
-                <span class="product__price  meta__price">R{{product.price|floatformat:2}}</span>
+                <span class="product__price  meta__price">R {{product.price|floatformat:2}}</span>
                 <!--       <span class="product__alcohol extra highlight">{{product.description}}</span> -->
 
             </div>

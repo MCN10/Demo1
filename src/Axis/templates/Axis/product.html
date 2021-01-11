@@ -27,7 +27,7 @@
 {% else %}
 <a href="{% url 'account:login' %}">
     <button class="cart">
-        <ion-icon src="{% static 'ion-icons/cart-outline.svg" size="large" class="cart__icon"></ion-icon>
+        <ion-icon src="{% static 'ion-icons/cart-outline.svg' %}" size="large" class="cart__icon"></ion-icon>
         <span class="text-hidden">Shopping cart</span>
         <span class="cart__count">{{cartItems}}</span>
     </button></a>
@@ -36,7 +36,7 @@
 
 			<section id="header" class="contend ">
         <p class="content__pretitle">{{ product.name}}</p><br>
-				<h1 class="content__title" data-scroll="" data-scroll-speed="2">R{{ product.price }}</h1><br><br><br><br>
+				<h1 class="content__title" data-scroll="" data-scroll-speed="2">R {{ product.price }}</h1><br><br><br><br>
         <p class="content--">
           <button style="opacity:0.8" ><a style="padding:.5em; font-weight: 600;" href="{% url 'Axis:store' %}" class="btn action--button-btn">Continue Shopping</a></button>
 

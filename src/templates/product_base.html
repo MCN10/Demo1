@@ -110,12 +110,12 @@
           <nav>
               <input class="check-hidden" type="checkbox" />
               <a type="radio" onclick="darkMode()">
-                  <ion-icon size="small" title="Dark Mode" name="contrast-outline"></ion-icon><br>Dark
+                  <ion-icon size="small" title="Dark Mode" name="contrast-outline"></ion-icon>
               </a>
-
+<!--
               <a href="{% url 'Axis:home' %}" title="Home">
                   <ion-icon src="{% static 'ion-icons/home-outline.svg' %}" size="large"></ion-icon><br>Home
-              </a>
+              </a> -->
               <a href="{% url 'Axis:store' %}" title="Online Store">
                   <ion-icon src="{% static 'ion-icons/storefront-outline.svg' %}" size="large"></ion-icon>
                   Store
@@ -165,7 +165,7 @@
               </a>
                           {% endif %}
               <a type="radio" onclick="lightMode()">
-                  <ion-icon size="small" title="Light Mode" name="sunny-outline"></ion-icon><br>Light
+                  <ion-icon size="small" title="Light Mode" name="sunny-outline"></ion-icon><br>
               </a>
 
                           {% if user.is_authenticated %}

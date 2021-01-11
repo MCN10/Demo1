@@ -29,7 +29,7 @@
                         <h4 class="action--text">Update</h4>
                     </th>
                     <th>
-                        <h4 class="action--text">Total</h4>
+                        <h4 class="action--text">Subtotals</h4>
                     </th>
                 </tr>
             </thead>
@@ -38,28 +38,28 @@
 
                 <tr>
                     <td>
-                      <a href="{% url 'Axis:product_details'  item.product.id %}">  <img class="img slider" src="{{ item.product.imageURL1 }}" style="width: 200px; height: 200px" /></a>
+                      <a href="{% url 'Axis:product_details'  item.product.id %}">  <img class="img slider" src="{{ item.product.imageURL1 }}" width="200" height="200" /></a>
                     </td>
 
                     <td>
-                        <strong class="action--text">{{item.product.name}}</strong>
+                        <p class="action--text">{{item.product.name}}</p>
                     </td>
                     <td>
-                        <strong class="action--text">R{{item.product.price|floatformat:2}}</strong>
+                        <p class="action--text">R{{item.product.price|floatformat:2}}</p>
                     </td>
 
                     <td>
-                        <strong class="action--text">{{item.quantity}}</strong>
+                        <p class="action--text">{{item.quantity}}</p>
                     </td>
                     <td>
                       {% if item.product.stock %}
-                        <ion-icon data-product={{item.product.id}} data-action="add" class="chg-quantity update-cart" size="large" name="chevron-up-circle-outline"></ion-icon>
+                        <ion-icon data-product={{item.product.id}} data-action="add" class="chg-quantity update-cart" size="large" src="{% static 'ion-icons/chevron-up-circle-outline.svg' %}"></ion-icon>
 {% endif %}
                         <hr>
-                        <ion-icon data-product={{item.product.id}} data-action="remove" class="chg-quantity update-cart" size="large" name="chevron-down-circle-outline"></ion-icon>
+                        <ion-icon data-product={{item.product.id}} data-action="remove" class="chg-quantity update-cart" size="large" src="{% static 'ion-icons/chevron-down-circle-outline.svg' %}"></ion-icon>
                     </td>
                     <td>
-                        <h4><strong class="action--text">{{item.get_total}}</strong></h4>
+                        <h5><strong class="action--text">R {{item.get_total}}</strong></h5>
 
                 </tr><!-- END TR-->
 
@@ -68,20 +68,17 @@
             </tbody>
         </table>
 
-        <div class="row justify-content-end">
-            <div class=" cart-wrap ftco-animate">
-                <div class="cart-total mb-3">
+        <div class="row justify-content-center">
+            <div>
+                <div>
                   <br>
-                    <h3>Cart Totals</h3>
-                    <hr>
+
 
                     <p >
-                        <span>Items: &nbsp;</span>
-                        <span><strong>{{order.get_cart_items}}</strong></span>
+                        <span class="action--text">{{order.get_cart_items}} Items &nbsp;</span>
                     </p>
                     <p>
-                        <span>Total:&nbsp; </span>
-                        <span><strong> R{{order.get_cart_total|floatformat:2}} </strong></span>
+                        <span><strong><h1>Grand Total: R {{order.get_cart_total|floatformat:2}}</h1> </strong></span>
                     </p>
                     <hr>
 
