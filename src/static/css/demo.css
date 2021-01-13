@@ -1476,7 +1476,6 @@ hr {
 }
 
 .action--compare {
-    margin: 0 0 0 4px;
     opacity: 0;
     pointer-events: none;
     cursor: default;
@@ -1598,7 +1597,7 @@ hr {
 }
 
 .compare-basket {
-    width: 100%;
+    width: 95%;
     padding: .75em;
     position: fixed;
     text-align: right;
