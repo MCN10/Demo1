@@ -155,9 +155,9 @@
                 }
                 return j(t, a["a"]), t
             }()) || r) || r),
-            P = new u.a("", {
+            P = new u.a("Welcome to 3rd Axis", {
                 color: "#000",
-                size: b.a.isMobile ? .7  : 1
+                size: b.a.isMobile ? .25  : 1
             });
         P.position.x -= .5 * P.basePosition, g.add(P);
         var _ = ["#FFFFFF", "#000", "#000", "#fff", "#FFFFFF"].map(function (e) {

@@ -16,7 +16,7 @@ class OrderItemsForm(ModelForm):
 
 class ShippingDetailsForm(ModelForm):
 	class Meta:
-		model = ShippingAddress	
+		model = ShippingAddress
 		fields = '__all__'
 
 
@@ -31,4 +31,3 @@ class CategoriesForm(ModelForm):
 		model = Category
 		fields = '__all__'
 		exclude = ['slug']
-

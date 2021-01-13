@@ -18,7 +18,7 @@ from .forms import *
 from .utils import cookieCart, cartData, guestOrder
 from .models import *
 from .filters import *
-
+from taggit.models import Tag
 # Create your views here.
 def about(request):
 
@@ -28,17 +28,20 @@ def home(request):
     return render(request, 'home_base.html', {})
 
 
-def store(request, category_slug=None):
+def store(request):
     data = cartData(request)
-
+    # posts = Product.objects.order_by('-published')
+    # Show most common tags
+    common_tags = Product.tags.most_common()[:4]
+    form = ProductsForm(request.POST)
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
     category = None
-
     products = Product.objects.all()
     categorylist = Category.objects.annotate(total_products=Count('product'))
-    context = {'cartItems': cartItems, 'products':products , 'category_list' : categorylist ,'category' : category , 'shipping': False}
+
+    context = {'cartItems': cartItems, 'items': items, 'order': order, 'products':products , 'categorylist' : categorylist , 'shipping': False}
     return render(request, 'Axis/store.html', context)
 
 
@@ -63,9 +66,13 @@ def product_details(request, pk):
     categorylist = Category.objects.annotate(total_products=Count('product'))
     product = Product.objects.get(id=pk)
     category = None
-    context = {'cartItems': cartItems, 'product':product , 'category_list' : categorylist ,'category' : category , 'shipping': False}
+    context = {'cartItems': cartItems, 'product':product , 'category_list' : categorylist ,'category' : category , 'shipping': False,}
     print("Categry List: ", categorylist)
     return render(request, 'Axis/product.html', context)
+
+
+
+
 
 def checkout(request):
     data = cartData(request)
@@ -304,10 +311,14 @@ def updateProduct(request, pk):
     if request.method == 'POST':
         form = ProductsForm(request.POST, instance=product)
         if form.is_valid():
+            newproduct = form.save(commit=False)
+            newproduct.slug = slugify(newproduct.name)
+            newproduct.save()
+            # Without this next line the tags won't be saved.
             form.save()
             return redirect('/products/')
 
-    context =  {'action':action, 'form':form, 'name':name }
+    context =  {'action':action, 'form':form, 'name':name, 'product': product, }
     return render(request, 'Axis/AxisCRM/order_form.html', context)
 
 def deleteProduct(request, pk):
