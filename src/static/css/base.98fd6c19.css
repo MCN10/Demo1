@@ -320,12 +320,7 @@
 	text-decoration: none;
 }
 
-.backtop::after {
-	content: "\2934";
-	font-size: 3vw;
-	vertical-align: top;
-	margin-left: 1rem;
-}
+
 
 /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {

@@ -68,7 +68,7 @@ ion-icon {
 }
 
 ion-icon {
-font-size: 86px;
+font-size: 56px;
 }
 
 
@@ -1044,7 +1044,7 @@ textarea.input100 {
     font-size: 1em;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100%;
     padding: 0 1.195em;
     cursor: pointer;

@@ -13,7 +13,7 @@
 <!-- Bottom bar with filter and cart info -->
 <div class="barr">
 
-    <section>
+    <section >
     					<!-- Class "cbp-spmenu-open" gets applied to menu -->
     					<button id="showLeft"></button>
 
@@ -22,17 +22,18 @@
                     </button>
 
     					<button id="showTop"></button>
-    			   <button class="carter" id="showBottom">
-                       <a><ion-icon src="{% static 'ion-icons/filter-circle-outline.svg' %}" size="large"></ion-icon><br>Filter</<a href="#"></a>
+    			   <button class="carter" id="showBottom" style="padding-right: 150px;">
+                       <a><ion-icon src="{% static 'ion-icons/search-outline.svg' %}" ></ion-icon><br>Filter</<a href="#"></a>
 
                     </button>
+
     				</section>
     				<section class="buttonset">
-
     					<!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
     					<button id="showLeftPush"></button>
-    					<button id="showRightPush" class="cart">                        <a href="#"></a><ion-icon src="{% static 'ion-icons/cart-outline.svg' %}" size="large" class="cart__icon"></ion-icon><br>Quick Cart<a href="#"></a>
+    					<button id="showRightPush" class="cart">                        <a href="#"></a><ion-icon src="{% static 'ion-icons/cart-outline.svg' %}"  class="cart__icon"></ion-icon><br>Quick Cart<a href="#"></a>
                                       <span class="cart__count">{{cartItems}}</span></button>
+
     				</section>
 
 
@@ -135,7 +136,7 @@
 
 
         {% for product in products %}
-        <div class="grid__item {{product.category.slug}}   product">
+        <div class="grid__item {{product.category}}   product">
 
 
 
