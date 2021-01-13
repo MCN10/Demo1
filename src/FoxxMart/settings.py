@@ -45,8 +45,6 @@ INSTALLED_APPS = [
     'home',
     'crispy_forms',
     'widget_tweaks',
-    'taggit',
-
 
 ]
 

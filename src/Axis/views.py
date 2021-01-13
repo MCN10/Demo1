@@ -18,7 +18,7 @@ from .forms import *
 from .utils import cookieCart, cartData, guestOrder
 from .models import *
 from .filters import *
-from taggit.models import Tag
+
 # Create your views here.
 def about(request):
 
@@ -32,7 +32,6 @@ def store(request):
     data = cartData(request)
     # posts = Product.objects.order_by('-published')
     # Show most common tags
-    common_tags = Product.tags.most_common()[:4]
     form = ProductsForm(request.POST)
     cartItems = data['cartItems']
     order = data['order']
@@ -69,9 +68,6 @@ def product_details(request, pk):
     context = {'cartItems': cartItems, 'product':product , 'category_list' : categorylist ,'category' : category , 'shipping': False,}
     print("Categry List: ", categorylist)
     return render(request, 'Axis/product.html', context)
-
-
-
 
 
 def checkout(request):
@@ -159,7 +155,7 @@ def processOrder(request):
         print("Order total is incorrect")
 
     if order.shipping == True:
-        ShippingAddress.objects.create(
+        shippingAddress, created = ShippingAddress.objects.create(
         country=data['shipping']['country'],
         address1=data['shipping']['address1'],
         address2=data['shipping']['address2'],
@@ -167,7 +163,7 @@ def processOrder(request):
         province=data['shipping']['province'],
         postal_code=data['shipping']['postal_code'],
         )
-        Customer.objects.filter(user=request.user).update(shippingAddress='ShippingAddress.id')
+        customer.shippingAddress = shippingAddress
 
 # Add code to send email to Store Owner
     return JsonResponse('Payment submitted..', safe=False)
