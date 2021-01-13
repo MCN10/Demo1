@@ -104,6 +104,12 @@ def updateItem(request):
         print("Stock: ",product.stock)
         orderItem.quantity = (orderItem.quantity - 1)
 
+    elif action == 'cancel':
+                product.stock = (product.stock + orderItem.quantity)
+                print("Stock: ",product.stock)
+                print("Quantity: ",orderItem.quantity)
+                orderItem.quantity = (orderItem.quantity == 0)
+
     product.save()
 
     orderItem.save()
