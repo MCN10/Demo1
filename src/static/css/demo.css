@@ -106,7 +106,7 @@ a {
     text-decoration: none;
     color: #000000;
     outline: none;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 a:hover {
@@ -1479,7 +1479,7 @@ hr {
     opacity: 0;
     pointer-events: none;
     cursor: default;
-    background-color: gray;
+    background-color: transparent;
     color: #000;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
@@ -1493,6 +1493,7 @@ hr {
 .compare-basket--active .action--compare:nth-child(4) {
     background-color: #fff;
     color: #000;
+    opacity: 1;
     pointer-events: auto;
     cursor: pointer;
 }
@@ -1597,8 +1598,7 @@ hr {
 }
 
 .compare-basket {
-    width: 95%;
-    padding: .75em;
+    width: 85%;
     position: fixed;
     text-align: right;
     top: 0;

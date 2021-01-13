@@ -70,7 +70,7 @@
 
 		var removeCtrl = document.createElement('button');
 		removeCtrl.className = 'action action--remove';
-		removeCtrl.innerHTML = '<ion-icon size="large" src="{% static \'ion-icons/close-circle-outline\' %}"></ion-icons>/<span class="action__text action__text--invisible">Remove product</span>';
+		removeCtrl.innerHTML = '<ion-icons src="{% static \'ion-icons/close-circle-outline.svg\' %}" size="small"></ion-icons><span class="action__text action__text--invisible">Remove product</span>';
 		removeCtrl.addEventListener('click', function() {
 			self.remove(item);
 		});
