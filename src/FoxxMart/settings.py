@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'home',
     'crispy_forms',
     'widget_tweaks',
+    'taggit',
+    'debug_toolbar',
 
 ]
 
@@ -60,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 ]
 
 ROOT_URLCONF = 'FoxxMart.urls'
@@ -79,7 +83,11 @@ TEMPLATES = [
         },
     },
 ]
-
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
 WSGI_APPLICATION = 'FoxxMart.wsgi.application'
 
 

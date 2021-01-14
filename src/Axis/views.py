@@ -21,8 +21,12 @@ from .filters import *
 
 # Create your views here.
 def about(request):
-
-    return render(request, 'Axis/about.html', {})
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+    context = {'cartItems': cartItems, 'items': items, 'order': order,}
+    return render(request, 'Axis/about.html', context)
 
 def home(request):
     return render(request, 'home_base.html', {})
@@ -120,8 +124,15 @@ def updateItem(request):
     return JsonResponse('Item was added', safe=False)
 
 def contact(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+    context = {'cartItems': cartItems, 'items': items, 'order': order,}
+
     if request.method == 'POST':
         message = request.POST['message']
+
         if request.user.is_authenticated:
             name = request.user.username
             email = request.user.email
@@ -135,8 +146,7 @@ def contact(request):
             send_mail('Contact Form', message, settings.EMAIL_HOST_USER, ['christopher@3rdaxis.co.za', 'mcn10.foxx@gmail.com'], fail_silently="false" )
             messages.success(request, ("Your message has been sent successfully..."))
         return redirect('Axis:store')
-
-    return render(request, 'Axis/contact.html', {})
+    return render(request, 'Axis/contact.html', context)
 
 def processOrder(request):
     transaction_id = datetime.datetime.now().timestamp()
