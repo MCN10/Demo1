@@ -132,7 +132,20 @@ class Category(models.Model):
     category_name   = models.CharField(max_length=50)
     date_added      = models.DateTimeField(auto_now_add=True, null=True)
     slug            = models.SlugField(blank=True, null=True)
+    count           = models.IntegerField(default=0)
 
+
+    def increment(self):
+        self.count += 1
+        return ''
+
+    def decrement(self):
+        self.count -= 1
+        return ''
+
+    def reset(self):
+        self.count == 0
+        return ''
 
     def save(self , *args, **kwargs):
         if not self.slug and self.category_name:

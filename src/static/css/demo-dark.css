@@ -1499,7 +1499,7 @@ hr {
     paddint-top: 0;
     pointer-events: none;
     cursor: default;
-    background-color: #000;
+    background-color: transparent;
     color: #fff;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
@@ -1511,8 +1511,8 @@ hr {
 
 .compare-basket--active .action--compare:nth-child(3),
 .compare-basket--active .action--compare:nth-child(4) {
-    background-color: #fff;
-    color: #000;
+    background-color: transparent;
+    color: #fff;
     pointer-events: auto;
     cursor: pointer;
 }
@@ -1617,8 +1617,8 @@ hr {
 }
 
 .compare-basket {
-    width: 95%;
-    padding: .5em;
+    width: 90%;
+    padding-left: 10px;
     text-align: right;
     position: fixed;
     top: 0;
@@ -1658,14 +1658,14 @@ hr {
     width: 100px;
     height: 100px;
     padding: 10px;
-    margin: 0 3px;
+    margin-right: 100px;
     border-radius: 2px;
     position: relative;
 }
 
 .product-icon::after {
-    content: '';
     position: absolute;
+    padding-right: 50px;
     width: 100%;
     height: 100%;
     top: 0;
@@ -3162,7 +3162,6 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
   .product-details {
     .product-title {
       margin-right: 20px;
-      font-family: $font-bold;
     }
     .product-description {
       margin: 5px 20px 5px 0;

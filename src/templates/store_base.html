@@ -105,7 +105,7 @@
 
             <nav>
                 <input class="check-hidden" type="checkbox" />
-                <a type="radio" onclick="darkMode()">
+                <a onclick="darkMode()">
                     <ion-icon size="small" title="Dark Mode" name="contrast-outline"></ion-icon><br>Dark
                 </a>
 
@@ -157,7 +157,7 @@
                     <ion-icon src="{% static 'ion-icons/options-outline.svg' %}" size="large"></ion-icon>Studio
                 </a>
                             {% endif %}
-                <a type="radio" onclick="lightMode()">
+                <a onclick="lightMode()">
                     <ion-icon size="small" title="Light Mode" name="sunny-outline"></ion-icon><br>Light
                 </a>
 
@@ -177,7 +177,6 @@
 
 
         <!-- Compare basket -->
-      <div class="compare-basket"><button class="action action--button action--compare"><ion-icon class="action action--button " src="{% static 'ion-icons/git-compare-outline.svg' %}"></ion-icon>Compare</button></div>
 
       {% if messages %}
       {% for message in messages %}
@@ -303,11 +302,7 @@
     				classie.toggle( menuRight, 'cbp-spmenu-open' );
     				disableOther( 'showRight' );
     			};
-    			showTop.onclick = function() {
-    				classie.toggle( this, 'active' );
-    				classie.toggle( menuTop, 'cbp-spmenu-open' );
-    				disableOther( 'showTop' );
-    			};
+
     			showBottom.onclick = function() {
     				classie.toggle( this, 'active' );
     				classie.toggle( menuBottom, 'cbp-spmenu-open' );
