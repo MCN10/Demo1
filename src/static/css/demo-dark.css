@@ -1617,8 +1617,7 @@ hr {
 }
 
 .compare-basket {
-    width: 90%;
-    padding-left: 10px;
+    width: 95%;
     text-align: right;
     position: fixed;
     top: 0;
