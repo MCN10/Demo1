@@ -155,7 +155,7 @@
                 }
                 return j(t, a["a"]), t
             }()) || r) || r),
-            P = new u.a("Welcome to 3rd Axis", {
+            P = new u.a("", {
                 color: "#000",
                 size: b.a.isMobile ? .25  : 1
             });
@@ -183,7 +183,7 @@
                     }
                 }]) && y(n.prototype, o), r && y(n, r), t
             }())({
-                frequency: .5
+                frequency: .0
             }, {
                 width: .1,
                 nbrOfPoints: 5
