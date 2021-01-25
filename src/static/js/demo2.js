@@ -155,8 +155,8 @@
                 }
                 return j(t, a["a"]), t
             }()) || r) || r),
-            P = new u.a("", {
-                color: "#000",
+            P = new u.a("One Realm Above"), {
+                color: "#FFFFFF",
                 size: b.a.isMobile ? .25  : 1
             });
         P.position.x -= .5 * P.basePosition, g.add(P);

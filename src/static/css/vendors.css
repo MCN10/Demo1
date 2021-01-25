@@ -258,7 +258,7 @@ body {
     --color-link: #0f51e4;
     --color-link-hover: #ebd944;
     color: var(--color-text);
-    background-image: url("../images/bg1.jpg");
+    background-image: url("../images/banner.jpg");
     background-size: cover;
     font-family: Futura, futura-pt, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
