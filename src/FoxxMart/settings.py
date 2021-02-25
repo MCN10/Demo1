@@ -140,9 +140,8 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+
+#SECURE_SSL_REDIRECT = False
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media" )
